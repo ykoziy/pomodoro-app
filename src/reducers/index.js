@@ -5,7 +5,7 @@ import {
   PRESS_RESET,
   SWITCH_TYPE,
   SET_START_TIME
-} from "../constants/actionTypes";
+} from "../constants/ActionTypes";
 
 export default (state, action) => {
   switch(action.type) {
