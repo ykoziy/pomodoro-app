@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { switchState } from '../actions'
 
 const Controls = ({children, currentState, switchState, handleResetClick}) => {
-    console.log(currentState);
     return (
         <div className="controls-container">
             {children}
