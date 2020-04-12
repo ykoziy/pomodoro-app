@@ -6,6 +6,7 @@ class Controls extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleResetClick = this.handleResetClick.bind(this);
   }
 
   countDown = () => {
@@ -32,15 +33,23 @@ class Controls extends Component {
     }
   }
 
+  handleResetClick = () => {
+    const {pressReset, intervalID} = this.props;
+    this.audio.pause();
+    this.audio.currentTime = 0;
+    clearInterval(intervalID);
+    pressReset();
+  }
+
   render() {
-    const {children, currentState, pressReset} = this.props;
+    const {children, currentState} = this.props;
     return (
         <div className="controls-container">
             {children}
             <div className="button-controls">
                 {currentState === "stop" && <button id="start_stop" onClick={this.handleClick}>START</button>}
                 {currentState === "run" && <button id="start_stop" className="active" onClick={this.handleClick}>STOP</button>}
-                <button id="reset" onClick={pressReset}>RESET</button>
+                <button id="reset" onClick={this.handleResetClick}>RESET</button>
             </div>
             <audio id="beep" ref={audio => this.audio = audio} preload="auto" src="https://sampleswap.org/samples-ghost/SOUND%20EFFECTS%20and%20NOISES/Alarm%20Sounds/137[kb]alarm-synth-verb-hit.wav.mp3" />
         </div>
