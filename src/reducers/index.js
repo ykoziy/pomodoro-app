@@ -3,6 +3,7 @@ import {
   ADJUST_SESSION_LENGTH,
   SWITCH_STATE,
   PRESS_RESET,
+  SET_INTERVAL_ID,
   SWITCH_TYPE,
   SET_TIME,
   SET_START_TIME
@@ -14,6 +15,8 @@ export default (state, action) => {
       return {...state, currentState: action.currentState};
     case ADJUST_BREAK_LENGTH:
       return {...state, breakLen: action.breakLen};
+    case SET_INTERVAL_ID:
+      return {...state, intervalID: action.intervalID}
     case ADJUST_SESSION_LENGTH:
         return {...state, sessionLen: action.sessionLen,
                 time: action.sessionLen*60,
