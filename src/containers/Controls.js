@@ -5,16 +5,26 @@ import { switchState, pressReset } from '../actions';
 class Controls extends Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick = () => {
+    const {currentState, switchState} = this.props
+    if (currentState === "run") {
+      switchState("stop");
+    } else {
+      switchState("run");
+    }
   }
 
   render() {
-    const {children, currentState, switchState, pressReset} = this.props;
+    const {children, currentState, pressReset} = this.props;
     return (
         <div className="controls-container">
             {children}
             <div className="button-controls">
-                {currentState === "stop" && <button id="start_stop" onClick={() => switchState("run")}>START</button>}
-                {currentState === "run" && <button id="start_stop" className="active" onClick={() => switchState("stop")}>STOP</button>}
+                {currentState === "stop" && <button id="start_stop" onClick={this.handleClick}>START</button>}
+                {currentState === "run" && <button id="start_stop" className="active" onClick={this.handleClick}>STOP</button>}
                 <button id="reset" onClick={pressReset}>RESET</button>
             </div>
         </div>
