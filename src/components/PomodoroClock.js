@@ -112,7 +112,7 @@ class PomodoroClock extends Component {
           <div className="pomodoro-clock">
               <Timer />
               <Controls>
-                  <BreakPane breakLen={this.state.breakLen} handleAdjustBreak={this.handleAdjustBreak}/>
+                  <BreakPane />
                   <SessionPane sessionLen={this.state.sessionLen} handleAdjustSession={this.handleAdjustSession}/>
               </Controls>
           </div>
