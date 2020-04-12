@@ -11,6 +11,8 @@ class Controls extends Component {
   countDown = () => {
     const {time, sessionType, switchType, tickTime} = this.props;
     if (time === 0) {
+      this.audio.currentTime= 0;
+      this.audio.play();
       switchType(sessionType);
     } else {
       tickTime();
@@ -40,6 +42,7 @@ class Controls extends Component {
                 {currentState === "run" && <button id="start_stop" className="active" onClick={this.handleClick}>STOP</button>}
                 <button id="reset" onClick={pressReset}>RESET</button>
             </div>
+            <audio id="beep" ref={audio => this.audio = audio} preload="auto" src="https://sampleswap.org/samples-ghost/SOUND%20EFFECTS%20and%20NOISES/Alarm%20Sounds/137[kb]alarm-synth-verb-hit.wav.mp3" />
         </div>
     );
   }
