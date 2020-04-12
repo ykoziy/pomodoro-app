@@ -3,6 +3,7 @@ import {
   ADJUST_SESSION_LENGTH,
   SWITCH_STATE,
   PRESS_RESET,
+  SET_INTERVAL_ID,
   SWITCH_TYPE,
   SET_TIME,
   SET_START_TIME
@@ -19,3 +20,7 @@ export const adjustBreakLength = (breakLen) => (
 export const adjustSessionLength = (sessionLen) => (
   {type: ADJUST_SESSION_LENGTH, sessionLen}
 );
+
+export const setIntervalID = (intervalID) => (
+  {type: ADJUST_SESSION_LENGTH, intervalID}
+)
