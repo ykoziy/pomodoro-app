@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Timer from "./Timer.js";
+import Timer from "../containers/Timer.js";
 import Controls from "../containers/Controls.js";
 import BreakPane from "./BreakPane.js";
 import SessionPane from "./SessionPane.js";
