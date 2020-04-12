@@ -14,7 +14,8 @@ const initialState = {
   time: 1500,
   startTime: 1500,
   type: "Session",
-  currentState: "stop"
+  currentState: "stop",
+  intervalID: undefined
 };
 
 const store = createStore(rootReducer, initialState);
