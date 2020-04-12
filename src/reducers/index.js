@@ -4,6 +4,7 @@ import {
   SWITCH_STATE,
   PRESS_RESET,
   SWITCH_TYPE,
+  SET_TIME,
   SET_START_TIME
 } from "../constants/ActionTypes";
 
