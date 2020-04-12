@@ -16,6 +16,8 @@ export default (state, action) => {
       return {...state, breakLen: action.breakLen};
     case SET_INTERVAL_ID:
       return {...state, intervalID: action.intervalID}
+    case TICK_TIME:
+      return {...state, time: state.time - 1};
     case ADJUST_SESSION_LENGTH:
         return {...state, sessionLen: action.sessionLen,
                 time: action.sessionLen*60,

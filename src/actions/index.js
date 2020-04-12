@@ -14,6 +14,8 @@ export const switchType = (sessionType) => ({type: SWITCH_TYPE, sessionType});
 
 export const pressReset = () => ({type: PRESS_RESET});
 
+export const tickTime = () => ({type: TICK_TIME});
+
 export const adjustBreakLength = (breakLen) => (
   {type: ADJUST_BREAK_LENGTH, breakLen}
 );
