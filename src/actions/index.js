@@ -22,5 +22,5 @@ export const adjustSessionLength = (sessionLen) => (
 );
 
 export const setIntervalID = (intervalID) => (
-  {type: ADJUST_SESSION_LENGTH, intervalID}
+  {type: SET_INTERVAL_ID, intervalID}
 )
