@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Timer from "../containers/Timer.js";
 import Controls from "../containers/Controls.js";
 import BreakPane from "../containers/BreakPane.js";
-import SessionPane from "./SessionPane.js";
+import SessionPane from "../containers/SessionPane.js";
 
 class PomodoroClock extends Component {
   constructor(props) {
