@@ -11,6 +11,8 @@ import {
 
 export const switchState = (currentState) => ({type: SWITCH_STATE, currentState});
 
+export const switchType = (type) => ({type: SWITCH_TYPE, type});
+
 export const pressReset = () => ({type: PRESS_RESET});
 
 export const adjustBreakLength = (breakLen) => (
