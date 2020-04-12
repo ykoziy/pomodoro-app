@@ -12,6 +12,8 @@ export default (state, action) => {
   switch(action.type) {
     case SWITCH_STATE:
       return {...state, currentState: action.currentState};
+    case ADJUST_BREAK_LENGTH:
+      return {...state, breakLen: action.breakLen};
     case PRESS_RESET:
       return { breakLen: 5,
               sessionLen: 25,
