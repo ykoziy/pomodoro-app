@@ -11,7 +11,7 @@ import {
 
 export const switchState = (currentState) => ({type: SWITCH_STATE, currentState});
 
-export const switchType = (type) => ({type: SWITCH_TYPE, type});
+export const switchType = (sessionType) => ({type: SWITCH_TYPE, sessionType});
 
 export const pressReset = () => ({type: PRESS_RESET});
 

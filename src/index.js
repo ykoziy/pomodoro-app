@@ -13,7 +13,7 @@ const initialState = {
   sessionLen: 25,
   time: 1500,
   startTime: 1500,
-  type: "Session",
+  sessionType: "Session",
   currentState: "stop",
   intervalID: undefined
 };
