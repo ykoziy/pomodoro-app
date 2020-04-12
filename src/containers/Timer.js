@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-//this.state.time/this.state.startTime
+
 const Timer = ({ time,  startTime, type, currentState}) => {
   const percent = time/startTime;
   let offset = 564.573 * (1 - percent.toFixed(3));
