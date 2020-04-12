@@ -1,8 +1,14 @@
-import React from "react";
-import { connect } from 'react-redux'
-import { switchState, pressReset } from '../actions'
+import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { switchState, pressReset } from '../actions';
 
-const Controls = ({children, currentState, switchState, pressReset}) => {
+class Controls extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const {children, currentState, switchState, pressReset} = this.props;
     return (
         <div className="controls-container">
             {children}
@@ -13,6 +19,7 @@ const Controls = ({children, currentState, switchState, pressReset}) => {
             </div>
         </div>
     );
+  }
 }
 
 const mapStateToProps = (state) => ({
