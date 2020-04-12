@@ -110,7 +110,7 @@ class PomodoroClock extends Component {
     return(
       <React.Fragment>
           <div className="pomodoro-clock">
-              <Timer percent={this.state.time/this.state.startTime} time={this.state.time} type={this.state.type} currentState={this.state.currentState}/>
+              <Timer />
               <Controls>
                   <BreakPane breakLen={this.state.breakLen} handleAdjustBreak={this.handleAdjustBreak}/>
                   <SessionPane sessionLen={this.state.sessionLen} handleAdjustSession={this.handleAdjustSession}/>

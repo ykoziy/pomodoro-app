@@ -1,6 +1,8 @@
 import React from "react";
-
-const Timer = ({ percent, time, type }) => {
+import { connect } from 'react-redux';
+//this.state.time/this.state.startTime
+const Timer = ({ time,  startTime, type, currentState}) => {
+  const percent = time/startTime;
   let offset = 564.573 * (1 - percent.toFixed(3));
 
   const getTime = (seconds) => {
@@ -25,4 +27,17 @@ const Timer = ({ percent, time, type }) => {
   );
 }
 
-export default Timer;
+const mapStateToProps = (state) => ({
+    time: state.time,
+    startTime: state.startTime,
+    type: state.type,
+    currentState: state.currentState
+});
+
+const mapDispatchToProps = (dispatch) => ({
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Timer);
