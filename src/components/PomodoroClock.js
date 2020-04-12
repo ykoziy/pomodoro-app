@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Timer from "./Timer.js";
-import Controls from "./Controls.js";
+import Controls from "../containers/Controls.js";
 import BreakPane from "./BreakPane.js";
 import SessionPane from "./SessionPane.js";
 
@@ -18,7 +18,7 @@ class PomodoroClock extends Component {
         currentState: "stop"
     }
   }
-  
+
   countDown = () => {
       let secs = this.state.time;
       if(secs === 0) {
@@ -111,7 +111,7 @@ class PomodoroClock extends Component {
       <React.Fragment>
           <div className="pomodoro-clock">
               <Timer percent={this.state.time/this.state.startTime} time={this.state.time} type={this.state.type} currentState={this.state.currentState}/>
-              <Controls currentState={this.state.currentState} handleStartClick={this.handleStartClick} handleStopClick={this.handleStopClick} handleResetClick={this.handleResetClick}>
+              <Controls>
                   <BreakPane breakLen={this.state.breakLen} handleAdjustBreak={this.handleAdjustBreak}/>
                   <SessionPane sessionLen={this.state.sessionLen} handleAdjustSession={this.handleAdjustSession}/>
               </Controls>
