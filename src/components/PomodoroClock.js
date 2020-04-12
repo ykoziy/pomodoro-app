@@ -113,7 +113,7 @@ class PomodoroClock extends Component {
               <Timer />
               <Controls>
                   <BreakPane />
-                  <SessionPane sessionLen={this.state.sessionLen} handleAdjustSession={this.handleAdjustSession}/>
+                  <SessionPane />
               </Controls>
           </div>
           <audio id="beep" ref={audio => this.audio = audio} preload="auto" src="https://sampleswap.org/samples-ghost/SOUND%20EFFECTS%20and%20NOISES/Alarm%20Sounds/137[kb]alarm-synth-verb-hit.wav.mp3" />
