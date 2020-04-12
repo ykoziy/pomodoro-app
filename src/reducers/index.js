@@ -35,6 +35,7 @@ export default (state, action) => {
               time: 1500,
               startTime: 1500,
               sessionType: "Session",
+              intervalID: undefined,
               currentState: "stop"
             };
     default:
