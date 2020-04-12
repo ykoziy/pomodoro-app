@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { switchState, pressReset } from '../actions';
+import { switchState, pressReset, setIntervalID, switchType, tickTime } from '../actions';
 
 class Controls extends Component {
   constructor(props) {
@@ -8,12 +8,25 @@ class Controls extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  countDown = () => {
+    const {time, sessionType, switchType, tickTime} = this.props;
+    if (time === 0) {
+      switchType(sessionType);
+    } else {
+      tickTime();
+    }
+  }
+
   handleClick = () => {
-    const {currentState, switchState} = this.props
+    const {currentState, switchState, setIntervalID, intervalID} = this.props;
     if (currentState === "run") {
       switchState("stop");
+      clearInterval(intervalID);
+      setIntervalID(undefined);
     } else {
       switchState("run");
+      let timer = setInterval(this.countDown, 1000);
+      setIntervalID(timer);
     }
   }
 
@@ -33,12 +46,18 @@ class Controls extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    currentState: state.currentState
+    currentState: state.currentState,
+    sessionType: state.sessionType,
+    intervalID: state.intervalID,
+    time: state.time
 });
 
 const mapDispatchToProps = (dispatch) => ({
   switchState: (state) => dispatch(switchState(state)),
-  pressReset: () => dispatch(pressReset())
+  pressReset: () => dispatch(pressReset()),
+  setIntervalID: (intervalID) => dispatch(setIntervalID(intervalID)),
+  switchType: (sessionType) => dispatch(switchType(sessionType)),
+  tickTime: () => dispatch(tickTime())
 });
 
 export default connect(
