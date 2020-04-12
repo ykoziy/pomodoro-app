@@ -5,5 +5,4 @@ export const PRESS_RESET = 'PRESS_RESET';
 export const SET_INTERVAL_ID = 'SET_INTERVAL_ID';
 
 export const SWITCH_TYPE = 'SWITCH_TYPE';
-export const SET_TIME = 'SET_TIME';
-export const SET_START_TIME = 'SET_START_TIME';
+export const TICK_TIME = 'TICK_TIME';
