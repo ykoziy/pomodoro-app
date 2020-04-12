@@ -71,41 +71,6 @@ class PomodoroClock extends Component {
       this.audio.currentTime = 0;
   }
 
-  handleAdjustBreak = (event) => {
-      if(this.state.currentState === "run") {
-          return;
-      }
-      let currId = event.currentTarget.id;
-      let currbreakLen = this.state.breakLen;
-      if(currId.includes("increment") && (currbreakLen < 60)) {
-          currbreakLen += 1;
-      } else if(currId.includes("decrement") && (currbreakLen > 1)){
-          currbreakLen -= 1;
-      }
-      this.setState({
-          breakLen: currbreakLen
-      });
-
-  }
-
-  handleAdjustSession = (event) => {
-      if(this.state.currentState === "run") {
-          return;
-      }
-      let currId = event.currentTarget.id;
-      let currSessionLen = this.state.sessionLen;
-      if(currId.includes("increment") && (currSessionLen < 60)) {
-          currSessionLen += 1;
-      } else if(currId.includes("decrement") && (currSessionLen > 1)){
-          currSessionLen -= 1;
-      }
-      this.setState({
-          sessionLen: currSessionLen,
-          time: currSessionLen*60,
-          startTime: currSessionLen*60,
-      });
-  }
-
   render() {
     return(
       <React.Fragment>
