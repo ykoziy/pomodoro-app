@@ -1,14 +1,28 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 
 import App from './components/App';
+import rootReducer from './reducers';
 
 import * as serviceWorker from './serviceWorker';
 
+const initialState = {
+  breakLen: 5,
+  sessionLen: 25,
+  time: 1500,
+  startTime: 1500,
+  type: "Session",
+  currentState: "stop"
+};
+
+const store = createStore(rootReducer, initialState);
+
 render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('app')
 );
 
