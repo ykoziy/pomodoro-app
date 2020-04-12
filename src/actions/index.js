@@ -7,4 +7,4 @@ import {
   SET_START_TIME
 } from "../constants/ActionTypes";
 
-export const switchState = (state) => ({type: SWITCH_STATE, state});
+export const switchState = (currentState) => ({type: SWITCH_STATE, currentState});
