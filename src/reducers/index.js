@@ -14,6 +14,11 @@ export default (state, action) => {
       return {...state, currentState: action.currentState};
     case ADJUST_BREAK_LENGTH:
       return {...state, breakLen: action.breakLen};
+    case ADJUST_SESSION_LENGTH:
+        return {...state, sessionLen: action.sessionLen,
+                time: action.sessionLen*60,
+                startTime: action.sessionLen*60
+              };
     case PRESS_RESET:
       return { breakLen: 5,
               sessionLen: 25,
