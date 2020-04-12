@@ -11,6 +11,14 @@ export default (state, action) => {
   switch(action.type) {
     case SWITCH_STATE:
       return {...state, currentState: action.currentState};
+    case PRESS_RESET:
+      return { breakLen: 5,
+              sessionLen: 25,
+              time: 1500,
+              startTime: 1500,
+              type: "Session",
+              currentState: "stop"
+            };
     default:
       return state;
   }
