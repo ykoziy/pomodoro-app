@@ -8,3 +8,5 @@ import {
 } from "../constants/ActionTypes";
 
 export const switchState = (currentState) => ({type: SWITCH_STATE, currentState});
+
+export const pressReset = () => ({type: PRESS_RESET});
