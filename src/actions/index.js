@@ -5,6 +5,6 @@ import {
   PRESS_RESET,
   SWITCH_TYPE,
   SET_START_TIME
-} from "../constants/actionTypes";
+} from "../constants/ActionTypes";
 
 export const switchState = (state) => ({type: SWITCH_STATE, state});
