@@ -1,13 +1,22 @@
-import React from 'react';
+import React from "react";
 import './App.scss';
 
-import PomodoroClock from "./PomodoroClock.js";
+import Timer from "../containers/Timer.js";
+import Controls from "../containers/Controls.js";
+import BreakPane from "../containers/BreakPane.js";
+import SessionPane from "../containers/SessionPane.js";
 
 const App = () => (
-    <React.Fragment>
-      <h1>Pomodoro Clock</h1>
-      <PomodoroClock />
-    </React.Fragment>
+  <React.Fragment>
+    <h1>Pomodoro Clock</h1>
+    <div className="pomodoro-clock">
+      <Timer />
+      <Controls>
+        <BreakPane />
+        <SessionPane />
+      </Controls>
+    </div>
+  </React.Fragment>
 );
 
 export default App;
