@@ -15,3 +15,7 @@ export const pressReset = () => ({type: PRESS_RESET});
 export const adjustBreakLength = (breakLen) => (
   {type: ADJUST_BREAK_LENGTH, breakLen}
 );
+
+export const adjustSessionLength = (sessionLen) => (
+  {type: ADJUST_SESSION_LENGTH, sessionLen}
+);
