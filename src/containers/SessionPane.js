@@ -18,12 +18,18 @@ const SessionPane = ({sessionLen, currentState, adjustSessionLength}) => {
       adjustSessionLength(currSessionLen);
     }
 
+    const onInput = (event) => {
+      let { value, min, max } = event.target;
+      value = Math.max(Number(min), Math.min(Number(max), Number(value)));
+      adjustSessionLength(value);
+    }
+
     return(
         <div className="session-pane">
             <div id="session-label">Session Length</div>
             <div className="adjust">
               <button id="session-decrement" onClick={onClickAdjust}>-</button>
-              <div id="session-length">{sessionLen}</div>
+              <input id="session-length" type="number" size="2" min="1" max="60" value={sessionLen} onChange={onInput}/>
               <button id="session-increment" onClick={onClickAdjust}>+</button>
             </div>
         </div>
