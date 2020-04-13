@@ -18,12 +18,18 @@ const BreakPane = ({breakLen, currentState, adjustBreakLength}) => {
       adjustBreakLength(currbreakLen);
     }
 
+    const onInput = (event) => {
+      let { value, min, max } = event.target;
+      value = Math.max(Number(min), Math.min(Number(max), Number(value)));
+      adjustBreakLength(value);
+    }
+
     return(
         <div className="break-pane">
             <div id="break-label">Break Length</div>
             <div className="adjust">
                 <button id="break-decrement" onClick={onClickAdjust}>-</button>
-                <div id="break-length">{breakLen}</div>
+                <input id="break-length" type="number" size="2" min="1" max="60" value={breakLen} onChange={onInput}/>
                 <button id="break-increment"  onClick={onClickAdjust}>+</button>
             </div>
         </div>
