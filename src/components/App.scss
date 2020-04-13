@@ -127,7 +127,10 @@ input[type=number] {
   text-align: center;
   width: inherit;
   font: inherit;
+}
 
+#session-length {
+  @extend #break-length
 }
 
 .break-pane {
