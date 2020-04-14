@@ -24,17 +24,17 @@ export default (state, action) => {
                 startTime: action.sessionLen*60
               };
     case SWITCH_TYPE:
-      if (action.sessionType === "Session") {
-        return {...state, sessionType: "Break", time: state.breakLen*60, startTime: state.breakLen*60}
+      if (action.sessionType === "session") {
+        return {...state, sessionType: "break", time: state.breakLen*60, startTime: state.breakLen*60}
       } else {
-        return {...state, sessionType: "Session", time: state.sessionLen*60, startTime: state.sessionLen*60}
+        return {...state, sessionType: "session", time: state.sessionLen*60, startTime: state.sessionLen*60}
       }
     case PRESS_RESET:
       return { breakLen: 5,
               sessionLen: 25,
               time: 1500,
               startTime: 1500,
-              sessionType: "Session",
+              sessionType: "session",
               intervalID: undefined,
               currentState: "stop"
             };
