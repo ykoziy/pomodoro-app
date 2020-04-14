@@ -34,10 +34,6 @@ const mapStateToProps = (state) => ({
     currentState: state.currentState
 });
 
-const mapDispatchToProps = (dispatch) => ({
-});
-
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+    mapStateToProps
 )(Timer);
