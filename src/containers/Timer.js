@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 
-const Timer = ({ time,  startTime, type, currentState}) => {
+const Timer = ({ time,  startTime, type, currentState, sessionType}) => {
   const percent = time/startTime;
   let offset = 564.573 * (1 - percent.toFixed(3));
 
@@ -22,6 +22,9 @@ const Timer = ({ time,  startTime, type, currentState}) => {
           <foreignObject className="text" x="0%" y="0%" width="100%" height="100%">
               <div id="time-left">{getTime(time)}</div>
           </foreignObject>
+          <foreignObject className="text" x="0%" y="0%" width="100%" height="100%">
+              <div id="session-label">{sessionType.charAt(0).toUpperCase() + sessionType.slice(1)}</div>
+          </foreignObject>
         </svg>
       </div>
   );
@@ -31,7 +34,8 @@ const mapStateToProps = (state) => ({
     time: state.time,
     startTime: state.startTime,
     type: state.type,
-    currentState: state.currentState
+    currentState: state.currentState,
+    sessionType: state.sessionType
 });
 
 export default connect(

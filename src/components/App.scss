@@ -209,9 +209,9 @@ $progress-bar-color: red;
 $progress-text-color: #51c5cf;
 $progress-fill-color: none;
 .progress-ring {
-    $size: 200px;
-    width: $size;
-    height: $size;
+    $time-size: 200px;
+    width: $time-size;
+    height: $time-size;
     margin: 7px;
     .circle {
         transform-origin: center center;
@@ -234,8 +234,17 @@ $progress-fill-color: none;
     #time-left {
         color: $progress-text-color;
         text-align: center;
-        line-height: $size;
+        line-height: $time-size;
         font-size: 3em;
+        box-shadow: none;
+    }
+
+    #session-label {
+        color: $progress-text-color;
+        text-align: center;
+        line-height: 115px;
+        font-size: 1.6em;
+        font-weight: bold;
         box-shadow: none;
     }
 }
