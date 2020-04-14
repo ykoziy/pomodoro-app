@@ -5,7 +5,7 @@ function withSessionType(WrappedComponent, sessionType) {
   class HocComponent extends Component {
 
     onClickAdjust = (event) => {
-      if(this.props.currentState === "run") {
+      if(this.props.currentState === "run" && (this.props.sessionType === sessionType)) {
           return;
       }
       const currId = event.currentTarget.id;
@@ -40,7 +40,8 @@ function withSessionType(WrappedComponent, sessionType) {
   }
 
   const mapStateToProps = (state) => ({
-      currentState: state.currentState
+      currentState: state.currentState,
+      sessionType: state.sessionType
   });
 
   return connect(
