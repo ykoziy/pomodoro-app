@@ -26,9 +26,10 @@ function withSessionType(WrappedComponent, sessionType) {
 
     render() {
       const { timeDuration } = this.props;
+      const sessionTypeText = sessionType.charAt(0).toUpperCase() + sessionType.slice(1)
       return(
           <div className={`${sessionType}-pane`}>
-              <div id={`${sessionType}-label`}>Session Length</div>
+              <div id={`${sessionType}-label`}>{sessionTypeText} Length</div>
               <div className="adjust">
                 <button id={`${sessionType}-decrement`} onClick={this.onClickAdjust}>-</button>
                 <input id={`${sessionType}-length`} type="number" size="2" min="1" max="60" value={timeDuration} onChange={this.onInput}/>
