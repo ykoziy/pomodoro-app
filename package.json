@@ -1,5 +1,6 @@
 {
   "name": "pomodoro-app",
+  "homepage": "https://yuriykoziy.com/proj/pomodoro-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
